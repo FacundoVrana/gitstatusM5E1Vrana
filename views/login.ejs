@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <%- include('partials/head') %>
+
+    <body>
+    
+    <%- include('partials/header') %>
+  
+    <main>
+        <h2 class="title-login">Inicio de sesión</h2>
+        <article class="container-log">
+            <form method="POST" action="#" class="login-form">
+                <div>
+                    <input type="text" placeholder="Nombre de usuario" name="username" class="username" required></input>
+                </div>
+                <div>
+                    <input type="password" placeholder="Contraseña" name="password" class="password" required></input>
+                </div>
+                <div class="botones">
+                    <button type="submit" class="boton-send"><a href="./" class="send-button"> Enviar<a/></button>
+                </div>
+            </form>
+        </article>
+    </main>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>

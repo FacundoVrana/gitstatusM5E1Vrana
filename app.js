@@ -5,17 +5,23 @@ const path = require('path');
 const publicPath = path.resolve(__dirname, './public') ;
 const puerto= process.env.PORT;
 
+
 app.use(express.static(publicPath));
 
-app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/home.html'));
+app.set('view engine', 'ejs')
+
+app.get('/', (req, res) => {
+    res.render('home');
 });
-app.get('/register.html', (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/register.html'));
+
+app.get('/login', (req, res) => {
+    res.render('login');
 });
-app.get('/login.html', (req,res) => {
-    res.sendFile(path.join(__dirname, '/views/login.html'));
+
+app.get('/register', (req,res) => {
+    res.render('register');
 });
+
 
 app.listen(puerto || 3000, function() {
     console.log("Servidor corriendo en el puerto 3000");
